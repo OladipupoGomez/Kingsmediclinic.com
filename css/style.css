@@ -129,6 +129,16 @@ a:focus {
      object-position: bottom right;
 }
 
+.hero_bg_box .overlay_text {
+  position: absolute;
+  color: #000000;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  margin-right: 1000px;
+  margin-bottom: 160px;
+}
+
 .sub_page .hero_area {
 position: relative;
   min-height: 100vh;
@@ -610,7 +620,7 @@ position: relative;
 .about.flip_card h3 {
     font-size: 1.5em;
     font-weight: bold;
-    color: #006400; /* Dark green */
+    color: #178066; /* Dark green */
     text-align: center;
     margin-top: 20px;
 }
@@ -627,7 +637,7 @@ position: relative;
     justify-content: center;
     width: 100px; /* Adjust width of icon container as needed */
     height: 100px; /* Adjust height of icon container as needed */
-    background-color: #006400; /* Dark green */
+    background-color: #178066; /* Dark green */
     color: #fff;
     border-radius: 50%;
     margin-bottom: 20px; /* Space between icon and heading */
@@ -635,7 +645,7 @@ position: relative;
 
 .about.doctor_section {
   background: #178066;
-  height: 1600px;
+  height: 950px;
   padding: 20px 0;
 }
 
@@ -756,6 +766,112 @@ position: relative;
 }
 
 .about.doctor_section .btn-box a:hover {
+  background-color: transparent;
+  color: #1fab89;
+}
+
+.team_section {
+  background: #178066;
+  padding: 20px 0;
+  height: 1500px;
+  margin-bottom: 200px;
+}
+
+.team_headings.heading_container {
+  color: #000000;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  margin-top: 200px;
+}
+
+.team_section .text_container {
+  color: #ffffff;
+}
+
+/* Container for each doctor box */
+.team_section .member_box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 45px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #ffffff;
+  margin-top: 75px;
+}
+
+/* Image box inside each doctor box */
+.team_section .member_box .photo_container {
+  position: relative; /* Ensure relative positioning for absolute positioning of image */
+  overflow: hidden;
+  height: 500px; /* Set a fixed height for consistency */
+}
+
+/* Image inside image box */
+.team_section .member_box .photo_container img {
+  width: 100%;
+  height: 100%; /* Ensure image covers the container */
+  object-fit: cover; /* Ensure the image scales properly */
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.team_section .member_box .info_box {
+  width: 100%;
+  padding: 25px 15px;
+  text-align: center;
+  position: relative;
+}
+
+.team_section .member_box .info_box .social_links {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 150%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.team_section .member_box .info_box .social_links a {
+  color: #62d2a2;
+  margin: 0 10px;
+}
+
+.team_section .member_box .info_box .social_links a:hover {
+  color: #1fab89;
+}
+
+.team_section .member_box:hover .social_links {
+  top: 0;
+  opacity: 1;
+}
+
+.team_section .btn_container {
+  display: flex;
+  justify-content: center;
+  margin-top: 45px;
+}
+
+.team_section .btn_container a {
+  display: inline-block;
+  padding: 10px 45px;
+  background-color: #1fab89;
+  color: #ffffff;
+  border-radius: 5px;
+  transition: all 0.3s;
+  border: 1px solid #1fab89;
+}
+
+.team_section .btn_container a:hover {
   background-color: transparent;
   color: #1fab89;
 }
@@ -1209,6 +1325,17 @@ position: relative;
   color: white;
 }
 
+.footer_section .opening_hours {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer_section .opening_hours li {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
 .contact_info {
   padding: 20px;
   background: #178066;
@@ -1406,54 +1533,55 @@ button:hover {
 
 .appointment_section {
     padding: 40px 0;
-    background-color: #f8f8f8;
+    background-color: #ffffff;
 }
 
 .appointment.heading_container h2 {
     font-size: 2em;
     margin-bottom: 20px;
-    color: #006400; /* Dark green */
+    color: #000000; /* Dark green */
 }
 
 .appointment.form_container {
     background-color: #ffffff;
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #ffffff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .appointment.form-group {
     margin-bottom: 15px;
+    color: #000000;
 }
 
 .appointment.form-group label {
     font-size: 1em;
-    color: #333;
+    color: #000000;
 }
 
 .appointment.form-group input,
 .appointment.form-group select,
 .appointment.form-group textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
+    padding: 5px;
+    border: 1px solid #7e7c7c;
     border-radius: 4px;
     font-size: 1em;
-    color: #333;
+    color: #080808;
+    resize: none;
 }
 
 .appointment.form-group input[type="date"] {
     padding: 8px;
 }
 
-.appointment.btn_container {
+.appointment .btn_container {
     text-align: center;
     margin-top: 20px;
 }
 
 .appointment.btn {
-    background-color: #006400; /* Dark green */
+    background-color: #62d2a2; /* Dark green */
     color: #ffffff;
     padding: 10px 20px;
     border: none;
@@ -1463,8 +1591,8 @@ button:hover {
 }
 
 .appointment.btn:hover {
-    background-color: #004d00; /* Darker green */
+    background-color: #ffffff; /* Darker green */
+    color: #62d2a2;
+    border: 1px solid #ccc;    
 }
-
- 
 /*# sourceMappingURL=style.css.map */
