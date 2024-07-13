@@ -1,9 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
-body {
-  font-family: 'Nunito', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body,html {
+  font-family: 'Montserrat', sans-serif;
   color: #000000;
-  background-color: #fefefe;
+  background-color: none;
   overflow-x: hidden;
+}
+
+/* Example usage for specific elements */
+h1, h2, h3, h4, h5, h6, p {
+    font-family: 'Montserrat', sans-serif;
 }
 
 .layout_padding {
@@ -91,7 +97,7 @@ a:focus {
 /*header section*/
 .hero_area {
   position: relative;
-  min-height: 70vh;
+  min-height: 100svh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -99,6 +105,13 @@ a:focus {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+           overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+@media (max-width: 768px) {
+    .hero_area {
+       object-position: top;
+    }
 }
 
 .hero_area .hero_bg_box {
@@ -126,62 +139,57 @@ a:focus {
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: bottom right;
-     object-position: bottom right;
+     /**object-position: bottom right;**/
+     object-position: center;
 }
 
-.hero_bg_box .overlay_text {
-  position: absolute;
-  color: #000000;
-  font-size: 2em;
-  font-weight: bold;
-  text-align: center;
-  margin-right: 1000px;
-  margin-bottom: 160px;
-}
-
-.sub_page .hero_area {
-position: relative;
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
+.sub_page.hero_area {
+  position: relative;
+  min-height: 70svh;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.sub_page .hero_area .hero_bg_box {
+.sub_page.hero_bg_box {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  overflow: hidden;
   z-index: -1;
+  overflow: hidden;
 }
 
-.sub_page .hero_area .hero_bg_box img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: bottom right;
-     object-position: bottom right;
+.sub_page .hero_bg_box .overlay_text {
+  position: absolute;
+  color: #000000;
+  font-size: 3em;
+  font-weight: bold;
+  text-align: center;
+  left: 19%;
+  top: 55%;
+  transform: translate(-50%, -50%);
 }
+
+@media (max-width: 576px) {
+  .sub_page .hero_bg_box .overlay_text {
+    font-size: 1.2em; /* Adjust the font size for smaller screens */
+    top: 60%; /* Adjust positioning if needed */
+    left: 25%;
+  }
+}
+
 
 .header_section {
-  padding: 15px 0;
+  padding: 10px 0;
   background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Ensures the header stays on top of other elements */
 }
 
 .header_section .container-fluid {
@@ -236,6 +244,7 @@ position: relative;
   transition: all 0.3s;
   font-weight: bold;
   align-items: right;
+  white-space: nowrap;
 }
 
 .custom_nav-container .nav_search-btn {
@@ -344,6 +353,7 @@ position: relative;
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 15px;
+  margin-top: 50px;
   color: #ffffff;
 }
 
@@ -393,7 +403,6 @@ position: relative;
 
 .slider_section .img-box img {
   width: 100%;
-  max-width: 375px;
 }
 
 .slider_section .carousel-indicators {
@@ -511,6 +520,16 @@ position: relative;
   color: #62d2a2;
 }
 
+.about_section{
+  margin-bottom: -100px;
+}
+
+@media (max-width: 768px) {
+  .about_section {
+    margin-bottom: -50px; /* Adjust margin-bottom for mobile view */
+  }
+}
+
 .about_section .row {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -538,6 +557,18 @@ position: relative;
 .about_section .heading_container h2 {
   font-weight: bold;
   color: #000000;
+  white-space: nowrap;
+  font-size: 1.9em;
+}
+
+@media (max-width: 767px) {
+  .about_section .heading_container h2 {
+    font-size: 1.38em; /* Adjust font size for mobile */
+    text-align: center; /* Center the text */
+    margin-left: 10px; /* Optional: Add left margin to avoid text going too far right */
+    transform: translateX(-11px);
+    margin-top: 10px;
+  }
 }
 
 .about_section .detail-box p {
@@ -643,57 +674,6 @@ position: relative;
     margin-bottom: 20px; /* Space between icon and heading */
 }
 
-.about.doctor_section {
-  background: #178066;
-  height: 950px;
-  padding: 20px 0;
-}
-
-.about.doctor_headings.heading_container{
-  color:  #000000;
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
-.about.doctor_section .text_container {
-  color: #ffffff;
-}
-
-/* Container for each doctor box */
-.about.doctor_section .box {
-  display: flex;
-  flex-direction: column;
-  margin-top: 45px;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #ffffff;
-}
-
-/* Image box inside each doctor box */
-.about.doctor_section .box .img-box {
-  position: relative; /* Ensure relative positioning for absolute positioning of image */
-  overflow: hidden;
-  height: 500px; /* Set a fixed height for consistency */
-}
-
-/* Image inside image box */
-.about.doctor_section .box .img-box img {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0; /* Initially hide the image */
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Animation properties */
-}
-
-/* Show image when it becomes visible */
-.about.doctor_section .box .img-box img.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* Animation for sliding in from the top */
 @keyframes slideInFromTop {
   0% {
@@ -704,6 +684,93 @@ position: relative;
   }
 }
 
+.about_doctor_section_headings {
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 100px;
+    transform: translateX(20px);
+}
+
+@media (max-width: 768px) {
+    .about_doctor_section_headings {
+        margin-top: -5px; /* Adjust the top margin for mobile */
+        margin-bottom: 10px; /* Adjust the bottom margin for mobile */
+        transform: translateX(-10px);
+    }
+}
+
+.about_doctor_section {
+    background: #ffffff;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 50px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    max-width: 250px;
+    margin-left: 70px;
+}
+
+.about_doctor_section:hover {
+    box-shadow: none;
+}
+
+.about_doctor_section_photo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0;
+}
+
+.about_doctor_section_info h5 {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.about_doctor_section_info p {
+    color: #000000;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.about_ds .btn-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 5px;
+  padding: 20px;
+  transform: translateX(500px); /* Move the box slightly to the right */
+}
+
+.about_ds .btn-box a {
+  display: inline-block;
+  padding: 10px 45px;
+  background-color: #1fab89;
+  color: #ffffff;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border: 1px solid #1fab89;
+}
+
+.about_ds .btn-box a:hover {
+  background-color: transparent;
+  color: #1fab89;
+}
+
+/* Mobile view styles */
+@media (max-width: 768px) {
+  .about_ds .btn-box {
+    padding: 8px 16px;
+    font-size: 14px;
+    margin-top: -5px;
+    transform: translateX(120px);
+    margin-bottom: 10px;
+  }
+}
 
 .about.doctor_section .box .detail-box {
   width: 100%;
@@ -744,17 +811,144 @@ position: relative;
   opacity: 1;
 }
 
-.about.doctor_section .btn-box {
+.team_headings {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 100px;
+    transform: translateX(30px);
+}
+
+@media (max-width: 768px) {
+  .team_headings {
+    transform: translateX(-5px); /* Adjust transform for mobile view */
+  }
+}
+
+.team_member {
+    background: #ffffff;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 50px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    max-width: 250px;
+    margin-left: 70px;
+}
+
+.team_member:hover {
+    box-shadow: none;
+}
+
+.team_member_photo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0;
+}
+
+.team_member_info h5 {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.team_member_info p {
+    color: #000000;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Default button styles */
+.team_member .btn-box {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.team_member .btn-box .btn {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+/* Mobile view styles */
+@media (max-width: 768px) {
+  .team_member .btn-box .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+.doctor_section_text_container p {
+  background-color: #178066; /* Set the background color to green */
+  font-size: 1.05em; /* Increase the font size (adjust as needed) */
+  color: white; /* Set the text color to white for better readability */
+  padding: 15px; /* Add padding for better spacing */
+  border-radius: 5px; /* Optional: Add border radius for rounded corners */
+  text-align: center;
+  transform: translateX(20px); /* Move the box slightly to the right */
+}
+
+@media (max-width: 768px) {
+  .doctor_section_text_container p {
+    transform: translateX(0px); /* Move the box slightly to the right */
+    text-align: center;
+    font-size: medium;
+  }
+}
+
+.doctor_section_headings {
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 200px;
+}
+
+.doctor_section {
+    background: #ffffff;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 50px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    max-width: 250px;
+    margin-left: 70px;
+    margin-top: 50px;
+}
+
+.doctor_section:hover {
+    box-shadow: none;
+}
+
+.doctor_section_photo img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0;
+}
+
+.doctor_section_info h5 {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.doctor_section_info p {
+    color: #000000;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.ds .btn-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 45px;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 5px;
+  padding: 20px;
+  transform: translateX(500px); /* Move the box slightly to the right */
 }
 
-.about.doctor_section .btn-box a {
+.ds .btn-box a {
   display: inline-block;
   padding: 10px 45px;
   background-color: #1fab89;
@@ -765,167 +959,20 @@ position: relative;
   border: 1px solid #1fab89;
 }
 
-.about.doctor_section .btn-box a:hover {
+.ds .btn-box a:hover {
   background-color: transparent;
   color: #1fab89;
 }
 
-.team_section {
-  background: #178066;
-  padding: 20px 0;
-  height: 1500px;
-  margin-bottom: 200px;
-}
-
-.team_headings.heading_container {
-  color: #000000;
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  margin-top: 200px;
-}
-
-.team_section .text_container {
-  color: #ffffff;
-}
-
-/* Container for each doctor box */
-.team_section .member_box {
-  display: flex;
-  flex-direction: column;
-  margin-top: 45px;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #ffffff;
-  margin-top: 75px;
-}
-
-/* Image box inside each doctor box */
-.team_section .member_box .photo_container {
-  position: relative; /* Ensure relative positioning for absolute positioning of image */
-  overflow: hidden;
-  height: 500px; /* Set a fixed height for consistency */
-}
-
-/* Image inside image box */
-.team_section .member_box .photo_container img {
-  width: 100%;
-  height: 100%; /* Ensure image covers the container */
-  object-fit: cover; /* Ensure the image scales properly */
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 1;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.team_section .member_box .info_box {
-  width: 100%;
-  padding: 25px 15px;
-  text-align: center;
-  position: relative;
-}
-
-.team_section .member_box .info_box .social_links {
-  position: absolute;
-  z-index: 2;
-  left: 50%;
-  top: 150%;
-  transform: translate(-50%, -50%);
-  background-color: #ffffff;
-  padding: 10px;
-  border-radius: 5px;
-  display: flex;
-  opacity: 0;
-  transition: all 0.3s;
-}
-
-.team_section .member_box .info_box .social_links a {
-  color: #62d2a2;
-  margin: 0 10px;
-}
-
-.team_section .member_box .info_box .social_links a:hover {
-  color: #1fab89;
-}
-
-.team_section .member_box:hover .social_links {
-  top: 0;
-  opacity: 1;
-}
-
-.team_section .btn_container {
-  display: flex;
-  justify-content: center;
-  margin-top: 45px;
-}
-
-.team_section .btn_container a {
-  display: inline-block;
-  padding: 10px 45px;
-  background-color: #1fab89;
-  color: #ffffff;
-  border-radius: 5px;
-  transition: all 0.3s;
-  border: 1px solid #1fab89;
-}
-
-.team_section .btn_container a:hover {
-  background-color: transparent;
-  color: #1fab89;
-}
-
-.doctor_section {
-  background: #178066;
-  height: 950px;
-  padding: 20px 0;
-}
-
-.doctor_headings.heading_container{
-  color:  #000000;
-  text-align: center;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
-.doctor_section .text_container {
-  color: #ffffff;
-}
-
-/* Container for each doctor box */
-.doctor_section .box {
-  display: flex;
-  flex-direction: column;
-  margin-top: 45px;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #ffffff;
-}
-
-/* Image box inside each doctor box */
-.doctor_section .box .img-box {
-  position: relative; /* Ensure relative positioning for absolute positioning of image */
-  overflow: hidden;
-  height: 500px; /* Set a fixed height for consistency */
-
-}
-
-/* Image inside image box */
-.doctor_section .box .img-box img {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0; /* Initially hide the image */
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Animation properties */
-}
-
-/* Show image when it becomes visible */
-.doctor_section .box .img-box img.visible {
-  opacity: 1;
-  transform: translateY(0);
+/* Mobile view styles */
+@media (max-width: 768px) {
+  .ds .btn-box {
+    padding: 8px 16px;
+    font-size: 14px;
+    margin-top: -5px;
+    transform: translateX(120px);
+    margin-bottom: 100px;
+  }
 }
 
 /* Animation for sliding in from the top */
@@ -937,7 +984,6 @@ position: relative;
     transform: translateY(0);
   }
 }
-
 
 .doctor_section .box .detail-box {
   width: 100%;
@@ -978,37 +1024,12 @@ position: relative;
   opacity: 1;
 }
 
-.doctor_section .btn-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-top: 45px;
-}
-
-.doctor_section .btn-box a {
-  display: inline-block;
-  padding: 10px 45px;
-  background-color: #1fab89;
-  color: #ffffff;
-  border-radius: 5px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  border: 1px solid #1fab89;
-}
-
-.doctor_section .btn-box a:hover {
-  background-color: transparent;
-  color: #1fab89;
-}
-
-.contact_section {
-  position: relative;
-  left: 70px;
-  z-index: 2; 
-  margin-bottom: -120px;
+@media (max-width: 768px) {
+  .contact_section {
+    left: 0;
+    margin-bottom: 0;
+    padding: 20px; /* Adjust padding if needed */
+  }
 }
 
 .contact_section .heading_container {
@@ -1024,6 +1045,15 @@ position: relative;
   font-weight: bold;
   right: 430px;
   margin-bottom: -14px; /* Adjust this value as needed to reduce the space */
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .contact_section .heading_container h2 {
+    font-size: 1.5em; /* Adjust font size for mobile */
+    right: 0; /* Adjust or remove the right positioning for mobile */
+    margin-bottom: -7px; /* Adjust margin for mobile */
+  }
 }
 
 .contact_section .form_container input {
@@ -1067,7 +1097,7 @@ position: relative;
   text-transform: uppercase;
   display: inline-block;
   padding: 12px 55px;
-  background-color: #178066;
+  background-color: #1fab89;
   color: #ffffff;
   border-radius: 5px;
   -webkit-transition: all 0.3s;
@@ -1380,8 +1410,19 @@ position: relative;
   font-size: 2.5em;
   font-weight: bold;
   margin-bottom: 20px;
-  right: 355px;
+  right: 340px;
   margin-top: -59px;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .contact_us_header {
+    font-size: 1.5em; /* Adjust font size for mobile */
+    margin-top: 7px; /* Adjust margin for mobile */
+    text-align: center; /* Center the text */
+    position: relative; /* Reset right positioning if any */
+    right: auto; /* Ensure right positioning is not applied */
+  }
 }
 
 .booking_section {
@@ -1398,16 +1439,24 @@ position: relative;
 }
 
 .booking_section .heading_container h2 {
-  font-size: 2.2em;
+  font-size: 2em;
   font-weight: bold;
   margin-bottom: -30px; /* Adjust this value as needed to reduce the space */
   justify-content: center;
   align-content: center;
 }
 
+@media (max-width: 768px) {
+  .booking_section {
+    padding: 0 10px; /* Add horizontal padding on mobile */
+    transform: translateX(-20px); /* Move the form slightly to the left */
+  }
+}
+
+
 .form_container1 {
   padding: 20px;
-  background: #ffffff;
+  background: #ffffffa6;
   border-radius: 0px;
   box-shadow: none;
   max-width: 600px;
@@ -1467,8 +1516,14 @@ textarea.message-box-1::placeholder {
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .btn_box {
+    margin-bottom: 100px;
+  }
+}
+
 button {
-  background: #178066;
+  background: #1fab89;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -1536,10 +1591,11 @@ button:hover {
     background-color: #ffffff;
 }
 
-.appointment.heading_container h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+.appointment_section .heading_container h2 {
+    font-size: 1.8em;
+    margin-bottom: 2px;
     color: #000000; /* Dark green */
+    white-space: nowrap;
 }
 
 .appointment.form_container {
