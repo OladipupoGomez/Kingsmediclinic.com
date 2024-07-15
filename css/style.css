@@ -980,7 +980,7 @@ a:focus {
     padding: 8px 16px;
     font-size: 14px;
     margin-top: -5px;
-    transform: translateX(80px);
+    transform: translateX(100px);
     margin-bottom: 100px;
   }
 }
@@ -1520,7 +1520,7 @@ textarea {
 /* For mobile view adjustments */
 @media (max-width: 768px) {
   #phoneNumber {
-    width: 135%; /* Ensure it fits within the screen on mobile devices */
+    width: 100%; /* Ensure it fits within the screen on mobile devices */
   }
 }
 
