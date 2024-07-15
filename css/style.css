@@ -695,7 +695,7 @@ a:focus {
     .about_doctor_section_headings {
         margin-top: -5px; /* Adjust the top margin for mobile */
         margin-bottom: 10px; /* Adjust the bottom margin for mobile */
-        transform: translateX(-10px);
+        transform: translateX(5px);
     }
 }
 
@@ -774,7 +774,7 @@ a:focus {
     padding: 8px 16px;
     font-size: 14px;
     margin-top: -5px;
-    transform: translateX(120px);
+    transform: translateX(100px);
     margin-bottom: 10px;
   }
 }
