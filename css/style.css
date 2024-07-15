@@ -914,6 +914,16 @@ a:focus {
     margin-top: 50px;
 }
 
+@media (max-width: 768px) {
+  .doctor_section {
+    margin-left: auto; /* Center the element horizontally */
+    margin-right: auto; /* Center the element horizontally */
+    margin-top: 20px; /* Adjust the top margin for mobile view */
+    max-width: 100%; /* Make the element responsive */
+    padding: 10px; /* Adjust padding for mobile view */
+  }
+}
+
 .doctor_section:hover {
     box-shadow: none;
 }
@@ -1463,6 +1473,15 @@ a:focus {
   margin: 0 auto;
 }
 
+@media (max-width: 768px) {
+  .form_container1 {
+    padding: 15px; /* Adjust padding for mobile view */
+    max-width: 90%; /* Ensure the form container fits within the mobile screen width */
+     /* Optional: Add some border radius for a better look on mobile */
+    /* Optional: Add a subtle shadow for better visibility */
+  }
+}
+
 .form-row {
   display: flex;
   justify-content: space-between;
@@ -1492,6 +1511,17 @@ textarea {
   border: none; /* Remove border */
   outline: none; /* Remove outline */
   box-sizing: border-box;
+}
+
+#phoneNumber {
+  width: 100%; /* Adjust this value to make it wider */
+}
+
+/* For mobile view adjustments */
+@media (max-width: 768px) {
+  #phoneNumber {
+    width: 135%; /* Ensure it fits within the screen on mobile devices */
+  }
 }
 
 input::placeholder,
