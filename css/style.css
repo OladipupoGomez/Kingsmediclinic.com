@@ -914,6 +914,16 @@ a:focus {
     margin-top: 50px;
 }
 
+@media (max-width: 768px) {
+  .doctor_section {
+    margin-left: auto; /* Center the element horizontally */
+    margin-right: auto; /* Center the element horizontally */
+    margin-top: 20px; /* Adjust the top margin for mobile view */
+    max-width: 100%; /* Make the element responsive */
+    padding: 10px; /* Adjust padding for mobile view */
+  }
+}
+
 .doctor_section:hover {
     box-shadow: none;
 }
