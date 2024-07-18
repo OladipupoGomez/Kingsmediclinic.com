@@ -828,6 +828,7 @@ a:focus {
 @media (max-width: 768px) {
   .team_headings {
     transform: translateX(-5px); /* Adjust transform for mobile view */
+    font-size: 1em;
   }
 }
 
