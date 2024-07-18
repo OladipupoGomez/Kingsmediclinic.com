@@ -843,6 +843,16 @@ a:focus {
     margin-left: 70px;
 }
 
+@media (max-width: 768px) {
+  .team_member {
+    margin-left: auto; /* Center the element horizontally */
+    margin-right: auto; /* Center the element horizontally */
+    margin-top: 20px; /* Adjust the top margin for mobile view */
+    max-width: 100%; /* Make the element responsive */
+    padding: 10px; /* Adjust padding for mobile view */
+  }
+}
+
 .team_member:hover {
     box-shadow: none;
 }
