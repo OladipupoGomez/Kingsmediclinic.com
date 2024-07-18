@@ -563,7 +563,7 @@ a:focus {
 
 @media (max-width: 767px) {
   .about_section .heading_container h2 {
-    font-size: 1.4em; /* Adjust font size for mobile */
+    font-size: 1.2em; /* Adjust font size for mobile */
     text-align: center; /* Center the text */
     margin-left: 10px; /* Optional: Add left margin to avoid text going too far right */
     transform: translateX(-11px);
