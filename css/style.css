@@ -178,7 +178,7 @@ a:focus {
   .sub_page .hero_bg_box .overlay_text {
     font-size: 1.2em; /* Adjust the font size for smaller screens */
     top: 60%; /* Adjust positioning if needed */
-    left: 25%;
+    left: 30%;
   }
 }
 
@@ -1645,6 +1645,15 @@ button:hover {
     margin-bottom: 2px;
     color: #000000; /* Dark green */
     white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .appointment_section .heading_container h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    white-space: normal;
+    text-align: center;
+  }
 }
 
 .appointment.form_container {
